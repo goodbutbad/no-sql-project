@@ -1,0 +1,62 @@
+{
+  "tables": {
+    "users": {
+      "columns": [
+        "id",
+        "name",
+        "age",
+        "email",
+        "city"
+      ],
+      "rows": [
+        {
+          "id": 1,
+          "name": "Азамат",
+          "age": 28,
+          "email": "azamat@mail.kg",
+          "city": "Бишкек"
+        },
+        {
+          "id": 2,
+          "name": "Айгерим",
+          "age": 34,
+          "email": "aigerim@mail.kg",
+          "city": "Ош"
+        },
+        {
+          "id": 3,
+          "name": "Бекзат",
+          "age": 22,
+          "email": "bekzat@mail.kg",
+          "city": "Каракол"
+        },
+        {
+          "id": 4,
+          "name": "Нурзат",
+          "age": 45,
+          "email": "nurzat@mail.kg",
+          "city": "Токмок"
+        },
+        {
+          "id": 5,
+          "name": "Элмира",
+          "age": 31,
+          "email": "elmira@mail.kg",
+          "city": "Жалал-Абад"
+        }
+      ],
+      "nextId": 7
+    },
+    "posts": {
+      "columns": [
+        "id",
+        "name",
+        "desc",
+        "is_active",
+        "likes"
+      ],
+      "rows": [],
+      "nextId": 3
+    }
+  }
+}
