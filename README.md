@@ -1,4 +1,4 @@
-# NoSQL-RU — Лёгкая NoSQL СУБД с русским DSL
+# NoSQL-KG — Лёгкая NoSQL СУБД с кыргызским DSL
 
 ## Структура проекта
 
@@ -8,7 +8,7 @@ nosql-ru/
 │   ├── package.json   — express, lowdb, exceljs, cors
 │   ├── server.js      — Express API (порт 3001)
 │   ├── db.js          — Lowdb + дефолтные данные (users, orders)
-│   ├── parser.js      — Парсер русского DSL
+│   ├── parser.js      — Парсер кыршызского DSL
 │   ├── executor.js    — CRUD / SELECT / JOIN
 │   └── exporter.js    — Excel (exceljs) и CSV
 └── frontend/
@@ -36,27 +36,5 @@ npm run dev
 # → http://localhost:5173
 ```
 
-## DSL-команды
 
-| Команда | Пример |
-|---|---|
-| ПОКАЗАТЬ ТАБЛИЦЫ | `ПОКАЗАТЬ ТАБЛИЦЫ` |
-| СОЗДАТЬ ТАБЛИЦУ | `СОЗДАТЬ ТАБЛИЦУ products (name, price, category)` |
-| УДАЛИТЬ ТАБЛИЦУ | `УДАЛИТЬ ТАБЛИЦУ products` |
-| ВСТАВИТЬ В | `ВСТАВИТЬ В users (name, age, email, city) ЗНАЧЕНИЯ ('Анна', 29, 'a@mail.ru', 'Казань')` |
-| ВЫБРАТЬ | `ВЫБРАТЬ * ИЗ users ГДЕ age > 25` |
-| ВЫБРАТЬ + СОДЕРЖИТ | `ВЫБРАТЬ * ИЗ users ГДЕ city СОДЕРЖИТ Москва` |
-| ВЫБРАТЬ + СОЕДИНИТЬ | `ВЫБРАТЬ * ИЗ orders СОЕДИНИТЬ users ПО userId=id` |
-| ОБНОВИТЬ | `ОБНОВИТЬ users УСТАНОВИТЬ city='Уфа' ГДЕ id=3` |
-| УДАЛИТЬ ИЗ | `УДАЛИТЬ ИЗ orders ГДЕ amount < 1000` |
-| ЭКСПОРТ В EXCEL | `ЭКСПОРТ users В EXCEL` |
-| ЭКСПОРТ В CSV | `ЭКСПОРТ orders В CSV` |
 
-## Операторы условий
-`=` `>` `<` `>=` `<=` `СОДЕРЖИТ` · Составные: `И` / `ИЛИ`
-
-## API эндпоинты
-- `POST /query` — выполнить DSL-запрос
-- `POST /export-file` — скачать Excel/CSV
-- `GET /tables` — список таблиц
-- `GET /tables/:name` — данные таблицы
